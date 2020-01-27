@@ -1,52 +1,45 @@
+//Spread  operator
 
 
-var  box6 = {
-    color: 'green',
-    position: 1,
-    clickMe: function(){
+function addFourAges (a,b,c,d){
 
-
-        document.querySelector('.green')
-        .addEventListener('click',() =>{
-            var str = 'This  is  box number '
-            +this.position+' and  it is '+this.color;
-            alert(str);
-        });
-    }
+    return  a+b+c+d;
 }
 
-box6.clickMe();
+var  sum1 =  addFourAges(18,15,10,22);
+
+console.log(sum1);
 
 
-var  box66 = {
-    color: 'blue',
-    position: 2,
-    clickMe: function(){
+
+//ES5
 
 
-        document.querySelector('.blue')
-        .addEventListener('click',() =>{
-            var str = 'This  is  box number '
-            +this.position+' and  it is '+this.color;
-            alert(str);
-        });
-    }
-}
-box66.clickMe();
+var ages = [18,15,10,22];
 
-var  box666 = {
-    color: 'red',
-    position: 3,
-    clickMe: function(){
+var  sum2 = addFourAges.apply(null, ages);
+console.log(sum2);
 
 
-        document.querySelector('.red')
-        .addEventListener('click',() =>{
-            var str = 'This  is  box number '
-            +this.position+' and  it is '+this.color;
-            alert(str);
-        });
-    }
-}
+//ES6
 
-box666.clickMe();
+
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+
+
+const familySmith = ["John", "jane","mark"];
+const familyMiller = ['mary',  'bob', 'ann'];
+
+const bigFamily = [...familyMiller, ...familySmith, "lily"];
+console.log(bigFamily);
+
+
+
+const h =  document.querySelector('h1');
+const  boxes = document.querySelectorAll('.box');
+
+const  all = [h, ...boxes];
+
+
+Array.from(all).forEach(cur => cur.style.color = 'purple');
