@@ -1,45 +1,32 @@
-//Spread  operator
+/// rest  parameters
 
+ //ES5
 
-function addFourAges (a,b,c,d){
+ function isFUllAges5(limit  ){
+  //   console.log(arguments);
 
-    return  a+b+c+d;
-}
+  var argsArr = Array.prototype.slice.call(arguments);
+  argsArr.forEach(function(cur){
+      console.log((2020 - cur)>=18);
+      
+  });
+     
+ }
 
-var  sum1 =  addFourAges(18,15,10,22);
-
-console.log(sum1);
-
-
-
-//ES5
-
-
-var ages = [18,15,10,22];
-
-var  sum2 = addFourAges.apply(null, ages);
-console.log(sum2);
-
-
-//ES6
-
-
-const sum3 = addFourAges(...ages);
-console.log(sum3);
-
-
-const familySmith = ["John", "jane","mark"];
-const familyMiller = ['mary',  'bob', 'ann'];
-
-const bigFamily = [...familyMiller, ...familySmith, "lily"];
-console.log(bigFamily);
+ isFUllAges5(2005,  1996,1883);
 
 
 
-const h =  document.querySelector('h1');
-const  boxes = document.querySelectorAll('.box');
-
-const  all = [h, ...boxes];
+ //ES6
 
 
-Array.from(all).forEach(cur => cur.style.color = 'purple');
+ function  isFUllAges6(...years){
+     console.log(years);
+     
+years.forEach(cur=>console.log((2020-cur)>=18));
+
+
+ }
+
+
+ isFUllAges6(1990,1994,1998);
