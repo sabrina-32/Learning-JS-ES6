@@ -1,32 +1,39 @@
-/// rest  parameters
+/// Maps
 
- //ES5
+const question = new Map();
+question.set('question', 'what is the  official  name  of the  latest  major  JS version?');
 
- function isFUllAges5(limit  ){
-  //   console.log(arguments);
+question.set(1,'ES5');
 
-  var argsArr = Array.prototype.slice.call(arguments);
-  argsArr.forEach(function(cur){
-      console.log((2020 - cur)>=18);
-      
-  });
-     
- }
+question.set(2,'ES6');
+question.set(3,'ES7');
+question.set(4,'ES8');
 
- isFUllAges5(2005,  1996,1883);
+question.set('correct', 3);
+
+question.set(true, 'Correct Answer');
 
 
-
- //ES6
-
-
- function  isFUllAges6(...years){
-     console.log(years);
-     
-years.forEach(cur=>console.log((2020-cur)>=18));
+question.set(false, 'Wrong Answer, Please  try  Again!');
 
 
- }
+console.log(question.get('question'));
+
+console.log(question.size);
+
+if(question.has(4)){
+
+    console.log("ans 4 is here");   
+
+}
+question.clear();
 
 
- isFUllAges6(1990,1994,1998);
+
+question.forEach((value,  key)=> console.log(`this  is ${key}, and  it's  set  to ${value}`));
+
+
+for(let  [key,value  ] of question.entries()){
+
+
+}
